@@ -1,0 +1,28 @@
+[
+   {
+      "ID":"",
+      "Text":"Benvenuto",
+      "AlertText":"",
+      "AlertShow":false,      
+      "Button":[
+         {"Text":"Menu scolastico","ID":"menuscuola"}
+      ]
+   },
+   {
+      "ID":"menuscuola",
+      "Text":"Seleziona scuola",
+      "AlertText":"Alert con messagebox",
+      "AlertShow":true,
+      "Button":[
+         {"Text":"Scuola Primaria","ID":"scuolapr"},
+         {"Text":"Scuola Secondaria","ID":"scuolase"}
+      ]
+   },
+   {
+      "ID":"scuolapr",
+      "Text":"Tanti saluti dalla scuola primaria \r\n Seconda riga",
+      "AlertText":"Alert in alto",
+      "AlertShow":false,      
+      "Button":[ {"Text":"Vai su google","URL":"www.google.it"}]
+   }
+]
