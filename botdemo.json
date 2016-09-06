@@ -10,6 +10,7 @@
    },
    {
       "ID":"info",
+      "ParseMode":"Markdown",
       "Text":"Bot creato da *Paolo Fisco*",
       "AlertText":"About",
       "AlertShow":false,
