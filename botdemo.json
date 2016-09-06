@@ -10,7 +10,7 @@
    },
    {
       "ID":"info",
-      "Text":"Bot creato da Paolo Fisco",
+      "Text":"Bot creato da *Paolo Fisco*",
       "AlertText":"About",
       "AlertShow":false,
       "Button":[
