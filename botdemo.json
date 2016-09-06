@@ -1,28 +1,19 @@
 [
    {
       "ID":"",
-      "Text":"Benvenuto",
+      "Text":"Benvenuto nel Menu del BOT",
       "AlertText":"",
       "AlertShow":false,      
       "Button":[
-         {"Text":"Menu scolastico","ID":"menuscuola"}
+         {"Text":"Info BOT","ID":"info"}
       ]
    },
    {
-      "ID":"menuscuola",
-      "Text":"Seleziona scuola",
-      "AlertText":"Alert con messagebox",
-      "AlertShow":true,
+      "ID":"info",
+      "Text":"Bot creato da Paolo Fisco",
+      "AlertText":"About",
+      "AlertShow":false,
       "Button":[
-         {"Text":"Scuola Primaria","ID":"scuolapr"},
-         {"Text":"Scuola Secondaria","ID":"scuolase"}
       ]
-   },
-   {
-      "ID":"scuolapr",
-      "Text":"Tanti saluti dalla scuola primaria \r\n Seconda riga",
-      "AlertText":"Alert in alto",
-      "AlertShow":false,      
-      "Button":[ {"Text":"Vai su google","URL":"www.google.it"}]
    }
 ]
