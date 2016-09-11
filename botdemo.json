@@ -5,7 +5,8 @@
       "AlertText":"",
       "AlertShow":false,      
       "Button":[
-         {"Text":"Info BOT","ID":"info"}
+         {"Text":"Info BOT","ID":"info"},
+         {"Text":"Versione","ID":"ver"}
       ]
    },
    {
@@ -18,5 +19,10 @@
          {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
          {"Text":"Email","URL":"mailto:paolo.fisco@gmail.com"}
       ]
+   },
+   ,
+   {
+      "ID":"ver",
+      "Text":"Versione 1.2"
    }
 ]
