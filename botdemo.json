@@ -1,7 +1,7 @@
 [
    {
       "ID":"HOME",
-      "Text":"Benvenuto nel Menu del BOT 1.2",
+      "Text":"Benvenuto nel Menu del BOT",
       "AlertText":"",
       "AlertShow":false,      
       "Button":[
@@ -16,11 +16,9 @@
       "AlertText":"About",
       "AlertShow":false,
       "Button":[
-         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
-         {"Text":"Email","URL":"mailto:paolo.fisco@gmail.com"}
+         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"}
       ]
    },
-   ,
    {
       "ID":"ver",
       "Text":"Versione 1.2"
