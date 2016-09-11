@@ -15,7 +15,8 @@
       "AlertText":"About",
       "AlertShow":false,
       "Button":[
-         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"}
+         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
+         {"Text":"Email","URL":"paolo.fisco@gmail.com"}
       ]
    }
 ]
