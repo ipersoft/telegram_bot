@@ -6,6 +6,7 @@
       "AlertShow":false,      
       "Button":[
          {"Text":"Info BOT","ID":"info"},
+         {"Text":"DEMO PDF","ID":"demopdf"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -21,6 +22,11 @@
    },
    {
       "ID":"ver",
-      "Text":"Versione 1.2"
+      "Text":"Versione 1.3"
+   },
+   {
+      "ID":"demopdf",
+      "Text":"Documento pdf DEMO",
+      "Document":"BQADBAADEQAD1_TtBcmhOQljH43hAg"
    }
 ]
