@@ -7,6 +7,8 @@
       "Button":[
          {"Text":"Info BOT","ID":"info"},
          {"Text":"DEMO PDF","ID":"demopdf"},
+         {"Text":"DEMO Audio","ID":"demoaudio"},
+         {"Text":"DEMO Video","ID":"demovideo"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -28,5 +30,14 @@
       "ID":"demopdf",
       "Text":"Documento pdf DEMO",
       "Document":"BQADBAADEQAD1_TtBcmhOQljH43hAg"
-   }
+   },
+   {
+      "ID":"demovideo",
+      "Text":"Demo Video",
+      "Video":"BAADBAADFAAD1_TtBQmT2rbfV2f8Ag"
+   },
+   {
+      "ID":"demoaudio",
+      "Voice":"AwADBAADEwAD1_TtBaX2RVeVN6bhAg"
+   }   
 ]
