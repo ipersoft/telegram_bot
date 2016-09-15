@@ -9,6 +9,7 @@
          {"Text":"DEMO PDF","ID":"demopdf"},
          {"Text":"DEMO Audio","ID":"demoaudio"},
          {"Text":"DEMO Video","ID":"demovideo"},
+         {"Text":"Meteo Desio","ID":"meteodesio"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -25,6 +26,10 @@
    {
       "ID":"ver",
       "Text":"Versione 1.3"
+   },
+   {
+      "ID":"meteodesio",
+      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php"
    },
    {
       "ID":"demopdf",
