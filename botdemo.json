@@ -29,7 +29,7 @@
    },
    {
       "ID":"meteodesio",
-      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/adesso.php"
+      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php"
    },
    {
       "ID":"demopdf",
