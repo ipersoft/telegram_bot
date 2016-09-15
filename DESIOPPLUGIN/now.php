@@ -11,6 +11,9 @@
     case "rain":
       $icont=":umbrella:";
       break;
+    case "partlycloudy":
+      $icont=":partly_sunny:";
+      break;
   }
 
   echo 'Condizioni: '.$condizione." ".$icont."\r\n";
