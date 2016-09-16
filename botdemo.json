@@ -34,7 +34,7 @@
    },
    {
       "ID":"urldemo",
-      "TextFromURL":"www.google.com"
+      "TextFromURL":"https://www.google.com"
    },   
    {
       "ID":"demopdf",
