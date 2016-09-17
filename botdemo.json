@@ -1,7 +1,7 @@
 [
    {
       "ID":"HOME",
-      "Text":"Benvenuto nel Menu del BOT :partly_sunny: :back:",
+      "Text":"Benvenuto nel Menu del BOT :partly_sunny: :back: :arrow_down_small:",
       "AlertText":"",
       "AlertShow":false,      
       "Button":[
