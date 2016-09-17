@@ -2,37 +2,46 @@
   {
     "Descrizione": "Sole",
     "Shortcode": ":sunny:",
-    "Unicode": "%e2%98%80",
     "Icon": "☀"
   },
   {
     "Descrizione": "Parzialmente nuvoloso",
     "Shortcode": ":partly_sunny:",
-    "Unicode": "%e2%9b%85",
     "Icon": "⛅"
   },
   {
     "Descrizione": "Nuvoloso",
     "Shortcode": ":cloud:",
-    "Unicode": "%e2%98%81",
     "Icon": "☁"
   },
   {
     "Descrizione": "Temporale",
     "Shortcode": ":zap:",
-    "Unicode": "%e2%9a%a1",
     "Icon": "⚡"
   },
   {
     "Descrizione": "Pioggia",
     "Shortcode": ":umbrella:",
-    "Unicode": "%e2%98%94",
     "Icon": "☔"
   },
   {
     "Descrizione": "Neve",
     "Shortcode": ":snowflake:",
-    "Unicode": "%e2%9d%84",
     "Icon": "❄"
+  },
+  {
+    "Descrizione": "Indietro",
+    "Shortcode": ":back:",
+    "Icon": "🔙"
+  },
+  {
+    "Descrizione": "Freccia in basso",
+    "Shortcode": ":arrow_down:",
+    "Icon": "⬇"
+  },
+  {
+    "Descrizione": "Triangolo con punta in basso",
+    "Shortcode": ":arrow_down_small:",
+    "Icon": "🔽"
   }
 ]
