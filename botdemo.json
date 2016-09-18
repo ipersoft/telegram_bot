@@ -55,13 +55,17 @@
    {
       "ID":"pushdemo_on",
       "Text":"Push abilitato",
-      "Push":"demo",
-      "Enabled"=1
+      "AlertText":"Push abilitato",
+      "AlertShow":true,      
+      "Push":
+         {"ID":"demopush","Enabled":true}
    },
    {
       "ID":"pushdemo_off",
-      "Text":"Push abilitato",
-      "Push":"demo",
-      "Enabled"=0
+      "Text":"Push disabilitato",
+      "AlertText":"Push disabilitato",
+      "AlertShow":false,      
+      "Push":
+         {"ID":"demopush","Enabled":false}
    }   
 ]
