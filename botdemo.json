@@ -11,7 +11,8 @@
          {"Text":"DEMO Video","ID":"demovideo"},
          {"Text":"Meteo Desio Now","ID":"meteodesio"},
          {"Text":"Facebook Desio","ID":"urldemo"},
-         {"Text":"Abilita Push","ID":"pushdemo"},
+         {"Text":"Abilita Push","ID":"pushdemo_on"},
+         {"Text":"Disabilita Push","ID":"pushdemo_off"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -52,8 +53,15 @@
       "Voice":"AwADBAADEwAD1_TtBaX2RVeVN6bhAg"
    },
    {
-      "ID":"pushdemo",
-      "Text":"Abilita push",
-      "Push":"demo"
+      "ID":"pushdemo_on",
+      "Text":"Push abilitato",
+      "Push":"demo",
+      "Enabled"=1
+   },
+   {
+      "ID":"pushdemo_off",
+      "Text":"Push abilitato",
+      "Push":"demo",
+      "Enabled"=0
    }   
 ]
