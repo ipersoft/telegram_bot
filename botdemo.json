@@ -10,7 +10,7 @@
          {"Text":"DEMO Audio","ID":"demoaudio"},
          {"Text":"DEMO Video","ID":"demovideo"},
          {"Text":"Meteo Desio Now","ID":"meteodesio"},
-         {"Text":"Test URL","ID":"urldemo"},
+         {"Text":"Facebook Desio","ID":"urldemo"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -34,7 +34,7 @@
    },
    {
       "ID":"urldemo",
-      "TextFromURL":"https://www.google.com"
+      "TextFromURL":"https://ipersoft.azurewebsites.net/demophp/fbdesio.php"
    },   
    {
       "ID":"demopdf",
