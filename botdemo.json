@@ -79,7 +79,7 @@
          {"ID":"demopush2","Enabled":true}
    },
    {
-      "ID":"pushdemo_off",
+      "ID":"pushdemo_off2",
       "Text":"Push disabilitato tipo 2",
       "AlertText":"Push disabilitato",
       "AlertShow":false,      
