@@ -43,5 +43,15 @@
     "Descrizione": "Triangolo con punta in basso",
     "Shortcode": ":arrow_down_small:",
     "Icon": "🔽"
+  },
+  {
+    "Descrizione": "Ufficio postale europeo",
+    "Shortcode": ":european_post_office:",
+    "Icon": "🏤"
+  },
+  {
+    "Descrizione": "Icona info",
+    "Shortcode": ":information_source:",
+    "Icon": "ℹ"
   }
 ]
