@@ -15,6 +15,7 @@
          {"Text":"Disabilita Push 1","ID":"pushdemo_off"},
          {"Text":"Abilita Push 2","ID":"pushdemo_on2"},
          {"Text":"Disabilita Push 2","ID":"pushdemo_off2"},
+         {"Text":"Ti leggo una favola","ID":"favola"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -85,5 +86,19 @@
       "AlertShow":false,      
       "Push":
          {"ID":"demopush2","Enabled":false}
+   },
+   {
+      "ID":"favola",
+      "Text":" ",
+      "Image":"AgADBAAD9qcxG9f07QVcoNCIsEOVPzZeZhkABA-JTx5mhTm_V1ABAAEC"
+   },
+   {
+      "ID":"favola",
+      "Text":"Un contadino possedeva una meravigliosa gallina che, ogni mattina, invece del solito uovo, deponeva nel pollaio nientemeno che un uovo d'oro. Non accontentandosi di quest'uovo quotidiano, il contadino immaginò che la gallina avesse un mucchio d'oro nelle viscere ma, quando la uccise, trovò che dentro era fatta come tutte le altre galline. Così, per la speranza di trovar la ricchezza tutta in una volta, restò privo anche del suo modesto provento. Accontentatevi di quello che avete e guardatevi dall'essere insaziabili."
+   },
+   {
+      "ID":"favola",
+      "Text":" ",
+      "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg"
    }   
 ]
