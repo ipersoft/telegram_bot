@@ -55,8 +55,13 @@
     "Icon": "ℹ"
   },
   {
-    "Descrizione": "Linea curva",
+    "Descrizione": "Linea ondulata",
     "Shortcode": ":wavy_dash:",
     "Icon": "〰"
+  },
+  {
+    "Descrizione": "Freccia destra",
+    "Shortcode": ":arrow_right:",
+    "Icon": "➡"
   }
 ]
