@@ -53,5 +53,10 @@
     "Descrizione": "Icona info",
     "Shortcode": ":information_source:",
     "Icon": "ℹ"
+  },
+  {
+    "Descrizione": "Linea curva",
+    "Shortcode": ":wavy_dash:",
+    "Icon": "〰"
   }
 ]
