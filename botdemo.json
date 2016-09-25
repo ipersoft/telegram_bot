@@ -10,7 +10,7 @@
          {"Text":"DEMO Audio","ID":"demoaudio"},
          {"Text":"DEMO Video","ID":"demovideo"},
          {"Text":"Meteo Desio Now","ID":"meteodesio"},
-         {"Text":"Facebook Desio","ID":"urldemo"},
+         {"Text":"Immagine da URL","ID":"urldemo"},
          {"Text":"Abilita Push 1","ID":"pushdemo_on"},
          {"Text":"Disabilita Push 1","ID":"pushdemo_off"},
          {"Text":"Abilita Push 2","ID":"pushdemo_on2"},
@@ -39,7 +39,10 @@
    },
    {
       "ID":"urldemo",
-      "TextFromURL":"https://ipersoft.azurewebsites.net/demophp/fbdesio.php"
+      "ImageFromURL":"https://www.google.it/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      "Button":[
+         {"Text":"Indietro","ID":"HOME"}      
+         ]      
    },   
    {
       "ID":"demopdf",
