@@ -48,7 +48,7 @@
    {
       "ID":"ParseMode",
       "ParseMode":"Markdown",
-      "Text":"*Testo Grassetto*\n_Testo corsivo_\n[Tipo link](https://www.google.it/)`Stile codice`",            
+      "Text":"*Testo Grassetto*\n_Testo corsivo_\n`Stile codice`\n[Tipo link](https://www.google.it/)",            
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
       ]       
@@ -102,7 +102,6 @@
    {
       "ID":"favola",
       "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg",
-      "Text":"Ti Leggo Una Favola - La Gallina dalle Uova D'Oro",
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
       ]        
