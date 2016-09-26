@@ -16,6 +16,7 @@
    },
    {
       "ID":"info",
+      "HidePrevKeyb":true,
       "ParseMode":"Markdown",
       "Text":"Bot creato da *Paolo Fisco*",
       "AlertText":"Informazioni sul BOT Demo",
@@ -110,7 +111,7 @@
       "ID":"onemessage",
       "Text":"Testo primo messaggio",
       "Button":[  
-               {"Text":":back: Indietro","ID":"onemessage2"}
+               {"Text":"Visualizza secondo messaggio","ID":"onemessage2"}
       ] 
    },
    {
@@ -118,7 +119,7 @@
       "OneMessage":true,
       "Text":"Testo secondo messaggio",
       "Button":[  
-               {"Text":":back: Indietro","ID":"onemessage3"}
+               {"Text":"Visualizza terzo messaggio","ID":"onemessage3"}
       ] 
    },
    {
