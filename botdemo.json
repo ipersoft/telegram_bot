@@ -10,6 +10,7 @@
          {"Text":"Esempio testo formattato","ID":"ParseMode"},         
          {"Text":"Meteo Desio in tempo reale","ID":"meteodesio"},      
          {"Text":"Ti leggo una favola","ID":"favola"},
+         {"Text":"Funzione OneMessage","ID":"onemessage"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -102,7 +103,30 @@
       "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg",
       "Text":"Ti Leggo Una Favola - La Gallina dalle Uova D'Oro",
       "Button":[  
-               {"Text":":back: Indietro","ID":"send"}
+               {"Text":":back: Indietro","ID":"HOME"}
       ]        
+   },
+   {
+      "ID":"onemessage",
+      "Text":"Testo primo messaggio",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"onemessage2"}
+      ] 
+   },
+   {
+      "ID":"onemessage2",
+      "OneMessage":true,
+      "Text":"Testo secondo messaggio",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"onemessage3"}
+      ] 
+   },
+   {
+      "ID":"onemessage3",
+      "OneMessage":true,
+      "Text":"Testo terzo messaggio",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"HOME"}
+      ] 
    }   
 ]
