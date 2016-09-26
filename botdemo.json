@@ -8,7 +8,7 @@
          {"Text":"Info BOT","ID":"info"},
          {"Text":"Esempi di invio allegati","ID":"send"},
          {"Text":"Esempio testo formattato","ID":"ParseMode"},         
-         {"Text":"Meteo Desio Now","ID":"meteodesio"},      
+         {"Text":"Meteo Desio in tempo reale","ID":"meteodesio"},      
          {"Text":"Ti leggo una favola","ID":"favola"},
          {"Text":"Versione","ID":"ver"}
       ]
