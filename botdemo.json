@@ -62,7 +62,7 @@
       "ID":"urldemo",
       "ImageFromURL":"https://upload.wikimedia.org/wikipedia/commons/1/1e/Stonehenge.jpg",
       "Button":[
-         {"Text":"Indietro","ID":"HOME"}      
+         {"Text":":back: Indietro","ID":"HOME"}      
          ]      
    },   
    {
@@ -100,6 +100,7 @@
    {
       "ID":"favola",
       "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg",
+      "Text":"Ti Leggo Una Favola - La Gallina dalle Uova D'Oro",
       "Button":[  
                {"Text":":back: Indietro","ID":"send"}
       ]        
