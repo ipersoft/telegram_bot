@@ -55,10 +55,8 @@
    },   
    {
       "ID":"meteodesio",
-      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php",
-      "Button":[  
-               {"Text":":back: Indietro","ID":"HOME"}
-      ]       
+      "IDNEXT":"HOME",
+      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php"
    },
    {
       "ID":"urldemo",
@@ -92,15 +90,17 @@
    },
    {
       "ID":"favola",
+      "IDNEXT":"favola2",
       "Text":"Ti Leggo Una Favola - La Gallina dalle Uova D'Oro",
       "Image":"AgADBAAD9qcxG9f07QVcoNCIsEOVPzZeZhkABHFpbv9xYEmeVlABAAEC"
    },
    {
-      "ID":"favola",
+      "ID":"favola2",
+      "IDNEXT":"favola3",
       "Text":"Un contadino possedeva una meravigliosa gallina che, ogni mattina, invece del solito uovo, deponeva nel pollaio nientemeno che un uovo d'oro. Non accontentandosi di quest'uovo quotidiano, il contadino immaginò che la gallina avesse un mucchio d'oro nelle viscere ma, quando la uccise, trovò che dentro era fatta come tutte le altre galline. Così, per la speranza di trovar la ricchezza tutta in una volta, restò privo anche del suo modesto provento. Accontentatevi di quello che avete e guardatevi dall'essere insaziabili."
    },
    {
-      "ID":"favola",
+      "ID":"favola3",
       "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg",
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
