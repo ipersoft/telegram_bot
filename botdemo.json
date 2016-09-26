@@ -1,20 +1,14 @@
 [
    {
       "ID":"HOME",
-      "Text":"Benvenuto nel Menu del BOT :partly_sunny: :back: :arrow_down_small:",
+      "Text":"Benvenuto nel Menu del BOT Demo\n:arrow_down_small:Funzioni disponibili",
       "AlertText":"",
       "AlertShow":false,      
       "Button":[
          {"Text":"Info BOT","ID":"info"},
-         {"Text":"DEMO PDF","ID":"demopdf"},
-         {"Text":"DEMO Audio","ID":"demoaudio"},
-         {"Text":"DEMO Video","ID":"demovideo"},
-         {"Text":"Meteo Desio Now","ID":"meteodesio"},
-         {"Text":"Immagine da URL","ID":"urldemo"},
-         {"Text":"Abilita Push 1","ID":"pushdemo_on"},
-         {"Text":"Disabilita Push 1","ID":"pushdemo_off"},
-         {"Text":"Abilita Push 2","ID":"pushdemo_on2"},
-         {"Text":"Disabilita Push 2","ID":"pushdemo_off2"},
+         {"Text":"Esempi di invio allegati","ID":"send"},
+         {"Text":"Esempio testo formattato","ID":"ParseMode"},         
+         {"Text":"Meteo Desio Now","ID":"meteodesio"},      
          {"Text":"Ti leggo una favola","ID":"favola"},
          {"Text":"Versione","ID":"ver"}
       ]
@@ -23,19 +17,46 @@
       "ID":"info",
       "ParseMode":"Markdown",
       "Text":"Bot creato da *Paolo Fisco*",
-      "AlertText":"About",
+      "AlertText":"Informazioni sul BOT Demo",
       "AlertShow":false,
       "Button":[
-         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"}
+         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
+         {"Text":"File configurazione BOT","URL":"https://github.com/ipersoft/telegram_bot/blob/master/botdemo.json"},
+         {"Text":"Wiki per file configurazione BOT","URL":"https://github.com/ipersoft/telegram_bot/wiki"},
+         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
+         {"Text":":back: Indietro","ID":"HOME"}
       ]
+   },
+   
+   {
+      "ID":"send",
+      "Text":"Invio allegati tramite telegram",
+      "Button":[
+               {"Text":"Demo invio documento PDF","ID":"demopdf"},
+               {"Text":"Demo invio audio","ID":"demoaudio"},
+               {"Text":"Demo invio video","ID":"demovideo"},
+               {"Text":"Demo invio immagine da URL","ID":"urldemo"},       
+               {"Text":":back: Indietro","ID":"HOME"}
+      ]      
    },
    {
       "ID":"ver",
-      "Text":"Versione 1.3"
+      "Text":"Versione 1.16"
    },
    {
+      "ID":"ParseMode",
+      "ParseMode":"Markdown",
+      "Text":"*Testo Grassetto*\n_Testo corsivo_\n[Tipo link](https://www.google.it/)`Stile codice`",            
+      "Button":[  
+               {"Text":":back: Indietro","ID":"HOME"}
+      ]       
+   },   
+   {
       "ID":"meteodesio",
-      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php"
+      "TextFromURL":"http://desio.azurewebsites.net/plugindesio/now.php",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"HOME"}
+      ]       
    },
    {
       "ID":"urldemo",
@@ -47,48 +68,25 @@
    {
       "ID":"demopdf",
       "Text":"Documento pdf DEMO",
-      "Document":"BQADBAADEQAD1_TtBcmhOQljH43hAg"
+      "Document":"BQADBAADEQAD1_TtBcmhOQljH43hAg",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"send"}
+      ]       
    },
    {
       "ID":"demovideo",
       "Text":"Demo Video",
-      "Video":"BAADBAADFAAD1_TtBQmT2rbfV2f8Ag"
+      "Video":"BAADBAADFAAD1_TtBQmT2rbfV2f8Ag",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"send"}
+      ]       
    },
    {
       "ID":"demoaudio",
-      "Voice":"AwADBAADEwAD1_TtBaX2RVeVN6bhAg"
-   },
-   {
-      "ID":"pushdemo_on",
-      "Text":"Push abilitato",
-      "AlertText":"Push abilitato",
-      "AlertShow":true,      
-      "Push":
-         {"ID":"demopush","Enabled":true}
-   },
-   {
-      "ID":"pushdemo_off",
-      "Text":"Push disabilitato",
-      "AlertText":"Push disabilitato",
-      "AlertShow":false,      
-      "Push":
-         {"ID":"demopush","Enabled":false}
-   },
-   {
-      "ID":"pushdemo_on2",
-      "Text":"Push abilitato tipo 2",
-      "AlertText":"Push abilitato",
-      "AlertShow":true,      
-      "Push":
-         {"ID":"demopush2","Enabled":true}
-   },
-   {
-      "ID":"pushdemo_off2",
-      "Text":"Push disabilitato tipo 2",
-      "AlertText":"Push disabilitato",
-      "AlertShow":false,      
-      "Push":
-         {"ID":"demopush2","Enabled":false}
+      "Voice":"AwADBAADEwAD1_TtBaX2RVeVN6bhAg",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"send"}
+      ]       
    },
    {
       "ID":"favola",
@@ -101,7 +99,9 @@
    },
    {
       "ID":"favola",
-      "Text":"Ti Leggo Una Favola - La Gallina dalle Uova D'Oro",
-      "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg"
+      "Audio":"BQADBAADGAAD1_TtBW6UuYDz1YLyAg",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"send"}
+      ]        
    }   
 ]
