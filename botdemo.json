@@ -134,7 +134,7 @@
       "ID":"location",
       "Text":":mag: Ricerca DEMO DAE. Risultati:",
       "Button":[
-         {"Text":"PIAZZA CONCILIAZIONE\nDistanza: 500m","ID":"UID1"},    
+         {"Text":"PIAZZA CONCILIAZIONE\r\nDistanza: 500m","ID":"UID1"},    
          {"Text":":back: Indietro","ID":"HOME"}      
          ]      
    },
@@ -147,7 +147,7 @@
    {
       "ID":"UID1_2",
       "IDNEXT":"UID1_3",
-      "Text":"Accessibilità: Sempre accessivile"
+      "Text":"Sempre accessibile\nPosizione verificata"
    },
    {
       "ID":"UID1_3",
