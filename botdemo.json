@@ -43,6 +43,7 @@
    },
    {
       "ID":"ver",
+      "IDNEXT":"HOME",
       "Text":"Versione 1.16"
    },
    {
