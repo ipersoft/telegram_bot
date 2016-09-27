@@ -25,7 +25,6 @@
          {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
          {"Text":"File configurazione BOT","URL":"https://github.com/ipersoft/telegram_bot/blob/master/botdemo.json"},
          {"Text":"Wiki per file configurazione BOT","URL":"https://github.com/ipersoft/telegram_bot/wiki"},
-         {"Text":"Profilo Facebook","URL":"https://www.facebook.com/ipersoft"},
          {"Text":":back: Indietro","ID":"HOME"}
       ]
    },
