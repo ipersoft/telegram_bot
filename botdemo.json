@@ -11,6 +11,7 @@
          {"Text":"Meteo Desio in tempo reale","ID":"meteodesio"},      
          {"Text":"Ti leggo una favola","ID":"favola"},
          {"Text":"Funzione OneMessage","ID":"onemessage"},
+         {"Text":"Demo Ricerca DAE","ID":"location"},
          {"Text":"Versione","ID":"ver"}
       ]
    },
@@ -128,5 +129,31 @@
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
       ] 
-   }   
+   },
+   {
+      "ID":"location",
+      "Text":":mag: Ricerca DEMO DAE. Risultati:",
+      "Button":[
+         {"Text":"PIAZZA CONCILIAZIONE\nDistanza: 500m","ID":"UID1"},    
+         {"Text":":back: Indietro","ID":"HOME"}      
+         ]      
+   },
+   {
+      "ID":"UID1",
+      "IDNEXT":"UID1_2",
+      "Text":":one: PIAZZA CONCILIAZIONE",
+      "Image":"AgADBAAD_acxG9f07QXp0ebEtdfdOMwOZhkABKQL2gFKpClZuXEBAAEC"
+   },
+   {
+      "ID":"UID1_2",
+      "IDNEXT":"UID1_3",
+      "Text":"Accessibilità: Sempre accessivile"
+   },
+   {
+      "ID":"UID1_3",
+      "Location":"45.617388,9.207558",
+      "Button":[  
+               {"Text":":back: Indietro","ID":"HOME"}
+      ] 
+   }    
 ]
