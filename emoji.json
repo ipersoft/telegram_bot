@@ -63,5 +63,15 @@
     "Descrizione": "Freccia destra",
     "Shortcode": ":arrow_right:",
     "Icon": "➡"
+  },
+  {
+    "Descrizione": "Lente",
+    "Shortcode": ":mag:",
+    "Icon": "🔍"
+  },
+  {
+    "Descrizione": "Lente destra",
+    "Shortcode": ":mag_right:",
+    "Icon": "🔎"
   }
 ]
