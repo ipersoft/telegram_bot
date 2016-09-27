@@ -151,7 +151,7 @@
    },
    {
       "ID":"UID1_3",
-      "Location":"45.617388,9.207558",
+      "Location": {"Latitude":45.617388,"Longitude"9.207558},
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
       ] 
