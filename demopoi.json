@@ -1,0 +1,55 @@
+[
+  {
+    "ID": "HOME",
+    "Text": "Benvenuto"
+  },
+  {
+    "ID": "LOCATION",
+    "POI": [
+      {
+        "ID": "DAE",
+        "Category": "Defibrillatore",
+        "MaxResult": 3,
+        "MinDistance": 1000,
+        "List": [
+          {
+            "ID": "UID1",
+            "Title": "Piazza Conciliazione",
+            "Latitude": 45.617388,
+            "Longitude": 9.207558
+          },
+          {
+            "ID": "UID2",
+            "Title": "Piazza Conciliazione Copia 2",
+            "Latitude": 45.617388,
+            "Longitude": 9.207558
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "UID1",
+    "IDNEXT": "UID1_2",
+    "Text": ":one: PIAZZA CONCILIAZIONE",
+    "Image": "AgADBAAD_acxG9f07QXp0ebEtdfdOMwOZhkABKQL2gFKpClZuXEBAAEC"
+  },
+  {
+    "ID": "UID1_2",
+    "IDNEXT": "UID1_3",
+    "Text": "Sempre accessibile\nPosizione verificata"
+  },
+  {
+    "ID": "UID1_3",
+    "Location": {
+      "Latitude": 45.617388,
+      "Longitude": 9.207558
+    },
+    "Button": [
+      {
+        "Text": ":back: Indietro",
+        "ID": "HOME"
+      }
+    ]
+  }
+]
