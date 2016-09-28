@@ -132,9 +132,9 @@
    },
    {
       "ID":"location",
-      "Text":":mag: Ricerca DEMO DAE. Risultati:",
+      "Text":":mag: Ricerca DEMO DAE. Risultati:\n\n:one: PIAZZA CONCILIAZIONE\n:pushpin: 500m",
       "Button":[
-         {"Text":"XPIAZZA CONCILIAZIONE Distanza: 500m","ID":"UID1"},    
+         {"Text":":one:","ID":"UID1"},    
          {"Text":":back: Indietro","ID":"HOME"}      
          ]      
    },
