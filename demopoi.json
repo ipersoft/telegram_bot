@@ -10,7 +10,7 @@
         "ID": "DAE",
         "Category": "Defibrillatore",
         "MaxResult": 3,
-        "MinDistance": 1000,
+        "MaxDistance": 1000,
         "List": [
           {
             "ID": "UID1",
