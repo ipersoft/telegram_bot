@@ -155,5 +155,13 @@
       "Button":[  
                {"Text":":back: Indietro","ID":"HOME"}
       ] 
-   }    
+   },
+   {
+      "ID":"LOCATION",
+      "Text":"Seleziona Categoria",
+      "Button":[
+               {"Text":"Defibrillatore","ID":"DAE"},
+               {"Text":"Indietro","ID":"HOME"}
+      ]      
+   }
 ]
