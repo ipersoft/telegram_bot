@@ -163,5 +163,54 @@
                {"Text":"Defibrillatore","ID":"DAE"},
                {"Text":"Indietro","ID":"HOME"}
       ]      
-   }
+   },
+  {
+    "ID": "DAE",
+    "POI": 
+      {
+        "Text":"Seleziona DAE",
+        "MaxResult": 3,
+        "MaxDistance": 1000,
+        "ButtonDetails":true,
+        "ListPOI": [
+          {
+            "ID": "UID1",
+            "Text": "Piazza Conciliazione",
+            "Latitude": 45.617388,
+            "Longitude": 9.207558
+          },
+          {
+            "ID": "UID1",
+            "Text": "Parco Desio",
+            "Latitude": 45.615738,
+            "Longitude": 9.215164
+          }
+        ]
+      }
+    
+  },
+  {
+    "ID": "UID1",
+    "IDNEXT": "UID1_2",
+    "Text": ":one: PIAZZA CONCILIAZIONE",
+    "Image": "AgADBAAD_acxG9f07QXp0ebEtdfdOMwOZhkABKQL2gFKpClZuXEBAAEC"
+  },
+  {
+    "ID": "UID1_2",
+    "IDNEXT": "UID1_3",
+    "Text": "Sempre accessibile\nPosizione verificata"
+  },
+  {
+    "ID": "UID1_3",
+    "Location": {
+      "Latitude": 45.617388,
+      "Longitude": 9.207558
+    },
+    "Button": [
+      {
+        "Text": ":back: Indietro",
+        "ID": "HOME"
+      }
+    ]
+  }   
 ]
