@@ -171,7 +171,8 @@
         "Text":"Seleziona DAE",
         "MaxResult": 3,
         "MaxDistance": 1000,
-        "ButtonDetails":true,
+        "SendDistance":true,
+        "SendMap":true,
         "ListPOI": [
           {
             "ID": "xUID1",
