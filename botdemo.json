@@ -169,8 +169,8 @@
     "POI": 
       {
         "Text":":wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:\nSeleziona DAE\n:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:",
-        "MaxResult": 3,
-        "MaxDistance": 3000,
+        "MaxResult": 10,
+        "MaxDistance": 10000,
         "SendDistance":true,
         "SendMap":true,
         "ListPOI": 
