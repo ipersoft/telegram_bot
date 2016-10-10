@@ -1,0 +1,9 @@
+{
+    "FirebaseAuthSecret":"xxxxxxxxxxxxxxxxxxxxxx",
+    "FirebaseBasePath":"https://xxxxxxxxxxxxxxx.firebaseio.com/",
+    "EmailFrom":"xxxxx@xxxxxx.xxx",
+    "EmailTo":"xxxxx@xxxxxx.xxxx",
+    "EmailSMTP":"smtp.xxxxxxxx.xxxx",
+    "EmailUserName":"xxxxxxxxxx",
+    "EmailPassword":"xxxxxxxxxx"
+  }
