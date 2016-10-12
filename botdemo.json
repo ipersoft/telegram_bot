@@ -169,7 +169,7 @@
     "POI": 
       {
         "Text":":wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:\nSeleziona DAE\n:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:",
-        "TextNoResult":"Nessun DAE trovato";
+        "TextNoResult":"Nessun DAE trovato",
         "MaxResult": 3,
         "MaxDistance": 10000,
         "DistanceOnText":true,
