@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TelegramServer
+</name>
+</assembly>
+<members>
+<member name="T:TelegramServer.My.MyWebExtension">
+ <summary>
+ Modulo utilizzato per definire le proprietà disponibili nello spazio dei nomi My per i progetti Web.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:TelegramServer.My.MyWebExtension.Computer">
+ <summary>
+ Restituisce informazioni sul computer host.
+ </summary>
+</member>
+<member name="P:TelegramServer.My.MyWebExtension.User">
+ <summary>
+ Restituisce informazioni sull'utente Web corrente.
+ </summary>
+</member>
+<member name="P:TelegramServer.My.MyWebExtension.Request">
+ <summary>
+ Restituisce l'oggetto Request.
+ </summary>
+</member>
+<member name="P:TelegramServer.My.MyWebExtension.Response">
+ <summary>
+ Restituisce l'oggetto Response.
+ </summary>
+</member>
+<member name="P:TelegramServer.My.MyWebExtension.Log">
+ <summary>
+ Restituisce l'oggetto AspLog.
+ </summary>
+</member>
+</members>
+</doc>

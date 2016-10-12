@@ -1,0 +1,13 @@
+[
+  {
+    "BOT":"xxxxxxxxxxxxx",
+    "LINK":"https://xxxxxxxxxx/config.json",
+	"TOKEN":"xxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+   {
+    "BOT":"IPERSOFT",
+    "LINK":"https://raw.githubusercontent.com/ipersoft/telegram_bot/master/botdemo.json",
+	"TOKEN":"xxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+
+  ]

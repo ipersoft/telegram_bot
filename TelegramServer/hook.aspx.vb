@@ -147,7 +147,7 @@ Public Class hook
 
             sLog.AppendLine("Controllo tipo messaggio")
             If tMessage.callback_query Is Nothing Then
-
+                pathProfile = Request.QueryString("bot").ToUpper + "/users/profile/" + tMessage.message.from.id.ToString
 #Region "Messaggio HOME"
 
 #Region "Invio ID in base al tipo allegato"
@@ -272,20 +272,44 @@ Public Class hook
         End If
 
         If Not smenu.POI Is Nothing Then
-            If Not smenu.POI.Text Is Nothing Then
-                smenu.Text = smenu.POI.Text
+
+            Dim s As String = Firebase(ActionFirebase.GetData, pathProfile, "")
+            s = s.Replace("""", "").Replace("\", """")
+            Dim pr As UserProfile = JsonConvert.DeserializeObject(Of UserProfile)(s)
+            Dim p As New cPOI
+            p.pois = smenu.POI
+            p.pr = pr
+
+            If p.Esegui() Then
+
+                If Not smenu.POI.Text Is Nothing Then
+                    smenu.Text = smenu.POI.Text + vbCrLf + p.Result_Text
+                Else
+                    smenu.Text = ""
+                End If
+
+                If Not smenu.POI.SendMap Is Nothing AndAlso smenu.POI.SendMap = True Then
+                    Dim sErrore As String = ""
+                    SendImageFromURLTelegram(pr.ChatID, "", p.Result_StringURLImage, "", sErrore)
+                End If
             Else
-                smenu.Text = ""
+                If Not smenu.POI.TextNoResult Is Nothing Then
+                    smenu.Text = smenu.POI.TextNoResult
+                Else
+                    smenu.Text = "Non trovato"
+                End If
             End If
 
-            Dim tempButton As List(Of TelegramMenu.Button)
-            tempButton = CreaButtonPOI(smenu.POI)
+            'Gestione button callback
+            Dim poiButton As List(Of TelegramMenu.Button)
+            poiButton = p.Result_Button
+            'aggiungo tasti provenienti dall'ID
             If Not smenu.Button Is Nothing Then
                 For Each b In smenu.Button
-                    tempButton.Add(b)
+                    poiButton.Add(b)
                 Next
             End If
-            smenu.Button = tempButton
+            smenu.Button = poiButton
         End If
 
 
@@ -756,62 +780,94 @@ Public Class hook
         InvioImmagine
         CercaLocazione
     End Enum
-    Function CreaButtonPOI(pois As TelegramMenu.POI) As List(Of TelegramMenu.Button)
+#Region "Gestione POI"
+    Public Class cPOI
+        Public pois As TelegramMenu.POI
+        Public pr As UserProfile
 
+        Public Result_StringURLImage
+        Public Result_POI As IEnumerable(Of Result)
+        Public Result_Button As List(Of TelegramMenu.Button)
+        Public Result_Text As String
 
+        Public Function Esegui() As Boolean
+            Dim z = ListaPOI(pois, pr)
 
-        Dim s As String = Firebase(ActionFirebase.GetData, pathProfile, "")
-        s = s.Replace("""", "").Replace("\", """")
-        Dim pr As UserProfile = JsonConvert.DeserializeObject(Of UserProfile)(s)
+            Result_POI = z
+            ElaboraDati()
 
-
-        Dim rs As New ResultPOI
-        rs.Results = New List(Of Result)
-        For Each p In pois.ListPOI
-            Dim dist As Double = (New Distance).Calcola(pr.Latitude, pr.Longitude, p.Latitude, p.Longitude, "K")
-            If dist * 1000 <= pois.MaxDistance Then
-                rs.Results.Add(New Result With {.ID = p.ID, .Text = p.Text, .Distance = dist, .Latitude = p.Latitude, .Longitude = p.Longitude})
+            If z.Count > 0 Then
+                Return True
+            Else
+                Return False
             End If
 
-        Next
+        End Function
+        Private Function ListaPOI(pois As TelegramMenu.POI, pr As UserProfile) As IEnumerable(Of Result)
+            Dim rs As New ResultPOI
+            rs.Results = New List(Of Result)
+            For Each p In pois.ListPOI
+                Dim dist As Double = (New Distance).Calcola(pr.Latitude, pr.Longitude, p.Latitude, p.Longitude, "K")
+                If dist * 1000 <= pois.MaxDistance Then
+                    rs.Results.Add(New Result With {.ID = p.ID, .Text = p.Text, .Distance = dist, .Latitude = p.Latitude, .Longitude = p.Longitude})
+                End If
+            Next
+            Dim z = From f In rs.Results Order By f.Distance Take pois.MaxResult
+            Return z
+
+        End Function
+
+        Private Sub ElaboraDati()
+            Result_Button = New List(Of TelegramMenu.Button)
+            Dim nLabel As Integer = 0
+
+            Dim sMap As New StringBuilder
+            Dim sText As New StringBuilder
+
+            sMap.Append("https://maps.googleapis.com/maps/api/staticmap?size=300x300&maptype=roadmap&markers=color:blue%7C")
+            sMap.Append(pr.Latitude).Append(",").Append(pr.Longitude)
+
+            For Each b In Result_POI
+                Dim sButton As New StringBuilder
+                sMap.Append("&markers=color:red%7Clabel:" + Chr(65 + nLabel) + "%7C").Append(b.Latitude).Append(",").Append(b.Longitude)
+                If Not pois.LabelOnText Is Nothing AndAlso pois.LabelOnText = True Then
+                    sText.Append("(" + Chr(65 + nLabel) + ") ")
+                End If
+                If Not pois.POITextOnText Is Nothing AndAlso pois.POITextOnText = True Then
+                    sText.Append(b.Text)
+                End If
+                If Not pois.DistanceOnText Is Nothing AndAlso pois.DistanceOnText = True Then
+                    sText.AppendLine.Append("Distanza: " & StringaDistanza(b.Distance))
+                End If
 
 
-        Dim sMap As New StringBuilder
-        sMap.Append("https://maps.googleapis.com/maps/api/staticmap?size=300x300&maptype=roadmap&markers=color:blue%7C")
-        sMap.Append(pr.Latitude).Append(",").Append(pr.Longitude)
+                If Not pois.LabelOnButton Is Nothing AndAlso pois.LabelOnButton = True Then
+                    sButton.Append("(" + Chr(65 + nLabel) + ") ")
+                End If
+                If Not pois.POITextOnButton Is Nothing AndAlso pois.POITextOnButton = True Then
+                    sButton.Append(b.Text)
+                End If
+                If Not pois.DistanceOnButton Is Nothing AndAlso pois.DistanceOnButton = True Then
+                    sButton.Append(" " + "Distanza: " & StringaDistanza(b.Distance))
+                End If
+                sText.AppendLine()
+                Result_Button.Add(New TelegramMenu.Button With {.Text = sButton.ToString, .ID = b.ID})
+                nLabel += 1
+            Next
+            Result_StringURLImage = sMap.ToString
+            Result_Text = sText.ToString
 
-        Dim z = From f In rs.Results Order By f.Distance Take pois.MaxResult
-        Dim btn As New List(Of TelegramMenu.Button)
-        Dim nLabel As Integer = 0
-        For Each b In z
-            If Not pois.SendMap Is Nothing AndAlso pois.SendMap = True Then
-                b.Text = "(" + Chr(65 + nLabel) + ") " + b.Text
+        End Sub
+        Function StringaDistanza(n As Double) As String
+            If n > 1 Then
+                Return n.ToString("0.0") + " km"
+            Else
+                Return (n * 1000).ToString(0) + " m"
             End If
+        End Function
+    End Class
 
-            If Not pois.SendDistance Is Nothing AndAlso pois.SendDistance = True Then
-                b.Text = b.Text + " " + StringaDistanza(b.Distance)
-            End If
-            btn.Add(New TelegramMenu.Button With {.ID = b.ID, .Text = b.Text})
-            sMap.Append("&markers=color:red%7Clabel:" + Chr(65 + nLabel) + "%7C").Append(b.Latitude).Append(",").Append(b.Longitude)
-            nLabel += 1
-        Next
-
-        If Not pois.SendMap Is Nothing AndAlso pois.SendMap = True Then
-            Dim sErrore As String = ""
-            SendImageFromURLTelegram(pr.ChatID, "", sMap.ToString, "", sErrore)
-        End If
-
-
-
-        Return btn
-    End Function
-    Function StringaDistanza(n As Double) As String
-        If n > 1 Then
-            Return n.ToString("0.0") + " km"
-        Else
-            Return (n * 1000).ToString(0) + " m"
-        End If
-    End Function
+#End Region
 End Class
 
 

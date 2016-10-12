@@ -22,10 +22,15 @@ Namespace TelegramMenu
 
     Public Class POI
         Public Property Text As String
+        Public Property TextNoResult As String
         Public Property MaxResult As Integer
         Public Property MaxDistance As Integer
-        Public Property ButtonDetails As Boolean?
-        Public Property SendDistance As Boolean?
+        Public Property DistanceOnText As Boolean?
+        Public Property DistanceOnButton As Boolean?
+        Public Property POITextOnText As Boolean?
+        Public Property POITextOnButton As Boolean?
+        Public Property LabelOnText As Boolean?
+        Public Property LabelOnButton As Boolean?
         Public Property SendMap As Boolean?
         Public Property ListPOI As List(Of ListPOI)
     End Class
