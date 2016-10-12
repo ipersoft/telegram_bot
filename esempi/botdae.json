@@ -22,7 +22,9 @@
         "DistanceOnText":true,
         "DistanceOnButton":true,
         "POITextOnText":true,
-        "POITextOnButton":true, 
+        "POITextOnButton":true,
+        "LabelOnTest":true,
+        "LabelOnButton":true,
         "SendMap":true,
         "ListPOI": 
          [
