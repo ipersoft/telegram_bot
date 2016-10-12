@@ -169,9 +169,13 @@
     "POI": 
       {
         "Text":":wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:\nSeleziona DAE\n:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:",
-        "MaxResult": 10,
+        "TextNoResult":"Nessun DAE trovato";
+        "MaxResult": 3,
         "MaxDistance": 10000,
-        "SendDistance":true,
+        "DistanceOnText":true,
+        "DistanceOnButton":true,
+        "POITextOnText":true,
+        "POITextOnButton":true, 
         "SendMap":true,
         "ListPOI": 
          [
