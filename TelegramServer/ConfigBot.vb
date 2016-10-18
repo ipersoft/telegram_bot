@@ -50,3 +50,7 @@ Public Class ButtonCallback
     <JsonProperty(NullValueHandling:=NullValueHandling.Ignore)>
     Public Property url As String
 End Class
+Public Class ConfigBOT
+    Property TOKEN As String
+    Property PATH As String
+End Class
