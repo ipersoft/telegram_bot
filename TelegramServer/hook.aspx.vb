@@ -20,30 +20,22 @@ Public Class hook
 
 #Region "Leggo configurazione bot"
         Try
-
             Try
                 ConfigAdmin = JsonConvert.DeserializeObject(Of AdminJSON)(My.Computer.FileSystem.ReadAllText(Server.MapPath("admin.json")))
             Catch ex As Exception
                 SendError("Leggo admin bot" + vbCrLf + ex.Message)
+                Exit Sub
             End Try
 
+            Dim sPath As String = Request.QueryString("bot") & "/CONFIG"
+            Dim txtJson As String = Firebase(ActionFirebase.GetData, sPath, "")
+            txtJson = txtJson.Replace("""", "").Replace("\", """")
 
-            Dim txtJson As String
-            txtJson = My.Computer.FileSystem.ReadAllText(Server.MapPath("config.json"))
+            Dim cBot As ConfigBOT
+            cBot = JsonConvert.DeserializeObject(Of ConfigBOT)(txtJson)
 
-            Dim cBots As New List(Of BotConfig)
-            cBots = JsonConvert.DeserializeObject(Of List(Of BotConfig))(txtJson)
-
-            If Not Request.QueryString("bot") Is Nothing Then
-                For Each cBot In cBots
-                    If cBot.BOT.ToUpper = Request.QueryString("bot").ToUpper Then
-                        Token = cBot.TOKEN
-                        ConfigJson = cBot.LINK
-                    End If
-                Next
-            Else
-                Exit Sub
-            End If
+            Token = cBot.TOKEN
+            ConfigJson = cBot.PATH
         Catch ex As Exception
             SendError("Leggo configurazione bot" + vbCrLf + ex.Message)
             Exit Sub
@@ -94,7 +86,7 @@ Public Class hook
                 'Comando diretto
 
                 sLog.AppendLine("Memorizzo dati su firebase")
-                'x debug Firebase(ActionFirebase.PushData, Request.QueryString("bot").ToUpper + "/" + tMessage.message.from.id.ToString, documentContents)
+                'x debug Firebase(ActionFirebase.PushData, Request.QueryString("bot") + "/" + tMessage.message.from.id.ToString, documentContents)
 
                 Dim profileTelegram As New UserProfile
                 profileTelegram.ChatID = tMessage.message.from.id
@@ -108,12 +100,12 @@ Public Class hook
                     profileTelegram.Longitude = tMessage.message.location.longitude
                     'SendMessageTelegram(tMessage.message.from.id, "Posizione memorizzata", "", "", sError)
                 End If
-                Firebase(ActionFirebase.SetData, Request.QueryString("bot").ToUpper + "/users/profile/" + tMessage.message.from.id.ToString, JsonConvert.SerializeObject(profileTelegram))
+                Firebase(ActionFirebase.SetData, Request.QueryString("bot") + "/users/profile/" + tMessage.message.from.id.ToString, JsonConvert.SerializeObject(profileTelegram))
 
             End If
         Catch ex As Exception
             sLog.AppendLine.AppendLine(ex.Message)
-            sLog.AppendLine(Request.QueryString("bot").ToUpper)
+            sLog.AppendLine(Request.QueryString("bot"))
             sLog.AppendLine(documentContents)
             SendError(sLog.ToString)
             Exit Sub
@@ -134,7 +126,7 @@ Public Class hook
             End Using
         Catch ex As Exception
             sLog.AppendLine.AppendLine(ex.Message)
-            sLog.AppendLine(Request.QueryString("bot").ToUpper)
+            sLog.AppendLine(Request.QueryString("bot"))
             sLog.AppendLine(documentContents)
             SendError(sLog.ToString)
             Exit Sub
@@ -147,7 +139,7 @@ Public Class hook
 
             sLog.AppendLine("Controllo tipo messaggio")
             If tMessage.callback_query Is Nothing Then
-                pathProfile = Request.QueryString("bot").ToUpper + "/users/profile/" + tMessage.message.from.id.ToString
+                pathProfile = Request.QueryString("bot") + "/users/profile/" + tMessage.message.from.id.ToString
 #Region "Messaggio HOME"
 
 #Region "Invio ID in base al tipo allegato"
@@ -222,8 +214,8 @@ Public Class hook
                 Dim LogCallBack As New UserProfile
                 LogCallBack.LastCommand = tMessage.callback_query.data
                 LogCallBack.LastUpdate = Now
-                Firebase(ActionFirebase.PushData, Request.QueryString("bot").ToUpper + "/callback/" + Now.ToString("yyyy-MM-dd"), JsonConvert.SerializeObject(LogCallBack))
-                pathProfile = Request.QueryString("bot").ToUpper + "/users/profile/" + tMessage.callback_query.from.id.ToString
+                Firebase(ActionFirebase.PushData, Request.QueryString("bot") + "/callback/" + Now.ToString("yyyy-MM-dd"), JsonConvert.SerializeObject(LogCallBack))
+                pathProfile = Request.QueryString("bot") + "/users/profile/" + tMessage.callback_query.from.id.ToString
 
                 RicercaMenu(tMessage.callback_query.data, True, tMessage.callback_query.from.id, tMessage.callback_query.id, tMessage.callback_query.message.message_id)
 
@@ -235,7 +227,7 @@ Public Class hook
             End If
         Catch ex As Exception
             sLog.AppendLine.AppendLine(ex.Message)
-            sLog.AppendLine(Request.QueryString("bot").ToUpper)
+            sLog.AppendLine(Request.QueryString("bot"))
             sLog.AppendLine(documentContents)
             SendError(sLog.ToString)
         End Try
@@ -380,8 +372,8 @@ Public Class hook
 
         sLog.AppendLine("Registro push")
         If Not smenu.Push Is Nothing Then
-            Dim sPercorsoPush2 As String = Request.QueryString("bot").ToUpper + "/users/push/" + chat_id.ToString + "/" + smenu.Push.ID
-            Dim sPercorsoPush As String = Request.QueryString("bot").ToUpper + "/push/" + smenu.Push.ID + "/" + chat_id.ToString
+            Dim sPercorsoPush2 As String = Request.QueryString("bot") + "/users/push/" + chat_id.ToString + "/" + smenu.Push.ID
+            Dim sPercorsoPush As String = Request.QueryString("bot") + "/push/" + smenu.Push.ID + "/" + chat_id.ToString
             sLog.AppendLine(sPercorsoPush)
             If smenu.Push.Enabled = True Then
                 sLog.AppendLine("Registro push abilita")
@@ -396,7 +388,7 @@ Public Class hook
 
         If sError <> "" Then
             sLog.AppendLine.AppendLine(sError)
-            sLog.AppendLine(Request.QueryString("bot").ToUpper)
+            sLog.AppendLine(Request.QueryString("bot"))
             SendError(sLog.ToString)
         End If
 
