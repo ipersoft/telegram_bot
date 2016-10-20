@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="MyController" class="my-controller">
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--
+
+-->
+<!-- riferimenti remoti -->
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.7/angular-locale_it-it.js"></script>
+
+<script src="https://use.fontawesome.com/99ef16724b.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+<script src="app.js"></script>
+
+<title>IperBOT editor</title>  
+</head>
+
+<body>
+<div class="container">
+
+<!-- menu -->
+<nav class="navbar navbar-inverse noprint">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href=".">IperBOT</a>
+		</div>
+	<ul class="nav navbar-nav">
+
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+                     
+	</ul>
+	</div>
+</nav>
+<!-- fine menu -->
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Esporta dati</div>
+  <div class="panel-body">
+	<input type='file' accept='.json' onchange='angular.element(this).scope().uploadedFile(this)' id="file" class="inputfile"><label for="file" class="btn btn-default">Apri configurazione esistente</label>
+	<button class="btn btn-info" ng-click="getJson()">Prepara Archivio</button>
+	<a href="" class="btn btn-success" role="button" id="getJson" style="visibility:hidden" ng-click="hideJson()">Scarica</a>
+	<!--<span id="getJson"></span>-->
+  </div>
+</div>
+</div>
+<div class="container">
+
+<div class="panel-body">
+		<div class="panel panel-default" ng-repeat="menu in entity">
+		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ad{{$index}}">{{menu.ID}}</button>
+		 <div id="ad{{$index}}" class="collapse">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aID{{$index}}">ID Menu:</label>
+					<input type="text" class="form-control" id="aID{{$index}}" ng-model="menu.ID">
+				</div>
+				<div class="form-group">
+					<label for="Text">Testo messaggio:</label>
+					<textarea class="form-control" id="Text" ng-model="menu.Text"></textarea>
+				</div> 
+				<div class="panel-body">
+				<div class="panel panel-default" ng-repeat="button in menu.Button">			
+				<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#bd{{$index}}">Tasto: {{button.Text}}</button>
+				<div id="bd{{$index}}" class="collapse">
+					<div class="panel-body">
+						<div class="form-group">
+						<label for="bText{{$index}}">Testo:</label>
+						<input type="text" class="form-control" id="bID{{$index}}" ng-model="button.Text">
+						</div>
+						<div class="form-group">
+						<label for="bID{{$index}}">ID:</label>
+						<input type="text" class="form-control" id="bID{{$index}}" ng-model="button.ID">
+						</div>
+						<div class="form-group">
+						<label for="bURL{{$index}}">URL:</label>
+						<input type="text" class="form-control" id="bID{{$index}}" ng-model="button.URL">
+						</div>						
+					</div>
+				</div>
+				</div>
+				</div>
+				<button class="btn btn-danger" ng-click="removeAddr($index)">Rimuovi</button>				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>
